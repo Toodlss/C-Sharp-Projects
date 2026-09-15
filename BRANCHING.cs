@@ -40,7 +40,7 @@ decimal length = Convert.ToDecimal(Console.ReadLine());
 decimal totalDimensions = width + height + length;
 
 // Checks if the total dimensions are greater than 500.
-if (totalDimensions > 500)
+if (totalDimensions > 50)
 {
 // Displays an error message if the package is too large.
 Console.WriteLine("Package too big to be shipped via Package Express.");
@@ -51,10 +51,7 @@ return;
 }
 
 // Multiplies the height, width, and length together, then multiplies the result by the weight.
-decimal quote = height * width * length * weight;
-
-// Divides the calculated amount by 100 to get the shipping quote.
-quote = quote / 100;
+decimal quote = (height * width * length * weight) / 100;
 
 // Displays the shipping quote as a dollar amount with two decimal places.
 Console.WriteLine("Your estimated total for shipping this package is: $" + quote.ToString("F2"));
