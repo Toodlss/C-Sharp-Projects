@@ -7,3 +7,10 @@ do
     number -= number2;
     Console.WriteLine("Current value of number: " + number);
 } while (number > 0);
+
+
+while (number < 0)
+{
+    Console.WriteLine("Epic Gamer Time!!!!");
+}
+
