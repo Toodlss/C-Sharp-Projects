@@ -11,8 +11,8 @@ static void Main(string[] args)
 string[] names = { "Kaden", "John", "Sarah", "Mike" };
 
     // Ask the user which index they want to view.
-    Console.WriteLine("Select an index from the string array (0-3):");
-    int stringIndex = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Select an index from the string array (1-4):");
+    int stringIndex = Convert.ToInt32(Console.ReadLine()) -1;
 
     // Check if the index exists in the string array.
     if (stringIndex >= 0 && stringIndex < names.Length)
@@ -30,8 +30,8 @@ string[] names = { "Kaden", "John", "Sarah", "Mike" };
     int[] numbers = { 10, 20, 30, 40 };
 
     // Ask the user which index they want to view.
-    Console.WriteLine("Select an index from the integer array (0-3):");
-    int integerIndex = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Select an index from the integer array (1-4):");
+    int integerIndex = Convert.ToInt32(Console.ReadLine()) -1;
 
     // Check if the index exists in the integer array.
     if (integerIndex >= 0 && integerIndex < numbers.Length)
@@ -55,8 +55,8 @@ string[] names = { "Kaden", "John", "Sarah", "Mike" };
     };
 
     // Ask the user which index they want to view.
-    Console.WriteLine("Select an index from the string list (0-3):");
-    int listIndex = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Select an index from the string list (1-4):");
+    int listIndex = Convert.ToInt32(Console.ReadLine()) -1;
 
     // Check if the index exists in the list.
     if (listIndex >= 0 && listIndex < games.Count)
