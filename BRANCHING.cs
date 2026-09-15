@@ -39,7 +39,7 @@ decimal length = Convert.ToDecimal(Console.ReadLine());
 // Adds the width, height, and length together to get the total dimensions.
 decimal totalDimensions = width + height + length;
 
-// Checks if the total dimensions are greater than 50.
+// Checks if the total dimensions are greater than 500.
 if (totalDimensions > 500)
 {
 // Displays an error message if the package is too large.
