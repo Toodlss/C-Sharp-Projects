@@ -40,8 +40,8 @@ static void Main(string[] args)
 // The lastName property is set to "Student".
 Employee employee = new Employee
 {
-firstName = "Sample",
-lastName = "Student"
+firstName = "Kaden",
+lastName = "Bilyeu"
 };
 
     // Calls the SayName() method on the Employee object.
