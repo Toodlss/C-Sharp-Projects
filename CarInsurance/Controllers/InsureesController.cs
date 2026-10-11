@@ -209,6 +209,12 @@ public class InsureeController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    // GET: INSUREES/Admin
+    public async Task<IActionResult> Admin()
+    {
+        return View(await _context.Insurees.ToListAsync());
+    }
+
     private bool InsureeExists(int? id)
     {
         return _context.Insurees.Any(e => e.Id == id);
