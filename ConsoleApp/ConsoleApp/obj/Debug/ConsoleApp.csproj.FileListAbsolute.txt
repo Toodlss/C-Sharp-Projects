@@ -1,0 +1,12 @@
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.exe
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.pdb
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.exe
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.pdb
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Owner\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.Up2Date
