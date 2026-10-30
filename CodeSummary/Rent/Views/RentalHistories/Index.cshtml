@@ -1,0 +1,127 @@
+﻿
+@model IEnumerable<TheatreCMS3.Areas.Rent.Models.RentalHistory>
+
+@{
+    ViewBag.Title = "Rental History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="rental-title">Index</h2>
+
+<div class="rental-index-page">
+
+    <div class="rental-create-link">
+        @Html.ActionLink("Create New", "Create")
+    </div>
+
+    <div class="rental-list-panel">
+
+        <div class="rental-list-header">
+            <span>Most recent Rental Histories</span>
+
+            <div class="rental-sort">
+                <label for="rentalSort">Sorted by:</label>
+                <select id="rentalSort">
+                    <option value="none">No Extra Sorting...</option>
+                    <option value="rental">Name</option>
+                    <option value="damaged">Damaged</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="rental-list">
+
+            @foreach (var item in Model)
+            {
+                <div class="rental-row"
+                     data-rental="@Html.AttributeEncode(item.Rental == null ? "" : item.Rental.ToString())"
+                     data-damaged="@item.RentalDamaged.ToString().ToLower()">
+
+                    <span class="rental-status @(item.RentalDamaged ? "is-damaged" : "is-ok")">
+                        @if (item.RentalDamaged)
+                        {
+                            <span aria-label="Damaged">&#10006;</span>
+                        }
+                        else
+                        {
+                            <span aria-label="Not damaged">&#10003;</span>
+                        }
+                    </span>
+
+                    <span class="rental-item-name">
+                        @Html.DisplayFor(modelItem => item.Rental)
+                    </span>
+
+
+                    <span class="rental-description">
+                        @(String.IsNullOrWhiteSpace(item.DamagesIncurred)
+                        ? "---"
+                        : item.DamagesIncurred)
+                    </span>
+
+
+                    <details class="rental-action-menu">
+                        <summary aria-label="Rental actions">&#8942;</summary>
+
+                        <div class="rental-action-dropdown">
+                            @Html.ActionLink("Edit", "Edit",
+                                new { id = item.RentalHistoryId })
+
+                            @Html.ActionLink("Details", "Details",
+                                new { id = item.RentalHistoryId })
+
+                            @Html.ActionLink("Delete", "Delete",
+                                new { id = item.RentalHistoryId },
+                                new { @class = "rental-delete-link" })
+                        </div>
+                    </details>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("rentalSort").addEventListener("change", function () {
+            var sortBy = this.value;
+            var list = document.querySelector(".rental-list");
+            var rows = Array.from(list.querySelectorAll(".rental-row"));
+
+            if (sortBy === "none") {
+                location.reload();
+                return;
+            }
+
+            rows.sort(function (a, b) {
+                var first = sortBy === "damaged"
+                    ? a.dataset.damaged
+                    : a.dataset.rental.toLowerCase();
+
+                var second = sortBy === "damaged"
+                    ? b.dataset.damaged
+                    : b.dataset.rental.toLowerCase();
+
+                return first.localeCompare(second);
+            });
+
+            rows.forEach(function (row) {
+                list.appendChild(row);
+            });
+        });
+
+        document.querySelectorAll(".rental-action-menu").forEach(function (menu) {
+            menu.addEventListener("toggle", function () {
+                if (menu.open) {
+                    document.querySelectorAll(".rental-action-menu").forEach(function (other) {
+                        if (other !== menu) {
+                            other.open = false;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

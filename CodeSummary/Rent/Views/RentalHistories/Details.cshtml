@@ -1,0 +1,49 @@
+﻿
+@model TheatreCMS3.Areas.Rent.Models.RentalHistory
+
+@{
+    ViewBag.Title = "Rental History Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var damageLabel = Model.RentalDamaged
+        ? "Damages Incurred"
+        : "Notes";
+}
+
+<h2 class="rental-title">Rental History Details</h2>
+
+<div class="rental-form">
+
+    <div class="rental-field">
+        <label>Rental</label>
+        <div class="form-control">
+            @Html.DisplayFor(model => model.Rental)
+        </div>
+    </div>
+
+    <div class="rental-field">
+        <label>Damaged?</label>
+        <div class="form-control">
+            @(Model.RentalDamaged ? "Yes" : "No")
+        </div>
+    </div>
+
+    <div class="rental-field">
+        <label>@damageLabel</label>
+        <div class="form-control">
+            @(String.IsNullOrWhiteSpace(Model.DamagesIncurred)
+                ? "---"
+                : Model.DamagesIncurred)
+        </div>
+    </div>
+
+    <div class="rental-buttons">
+        @Html.ActionLink("Back to List", "Index",
+            null, new { @class = "btn btn-dark" })
+
+        @Html.ActionLink("Edit", "Edit",
+            new { id = Model.RentalHistoryId },
+            new { @class = "btn btn-success" })
+    </div>
+
+</div>
